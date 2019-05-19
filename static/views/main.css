@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=VT323&display=swap');
+
+body {
+  background-color: #000;
+  width: 100%;
+  height:100%;
+  color: #fff;
+  font-family: 'VT323', monospace;
+  font-size: 20pt;
+}
+
+input {
+  background-color: transparent;
+  color : transparent;
+  border: none;
+  font-family: 'VT323', monospace;
+  font-size: 20pt;
+  size:1;
+}
+
+input:focus {
+  outline: none;
+}
+
+p {
+  margin: 0;
+}

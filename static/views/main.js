@@ -5,7 +5,10 @@ $('#input').keydown((e)=>{
     inputText.innerHTML = input.value;
     if(e.key=='Enter'){
       $('#text')[0].innerHTML += `<span>~~~> ${input.value}</span><br/>`;
-      $('#text')[0].innerHTML += `<span>${run(input.value)}</span><br/>`;
+      var res = run(input.value);
+      if(res!=""){
+        $('#text')[0].innerHTML += `<span>${res}</span><br/>`;
+      }
       input.value="";
       inputText.innerHTML="";
     }
@@ -27,5 +30,13 @@ setInterval(
 , 500);
 
 const run = (cmd) => {
-  return `Your command was ${cmd}`;
+  switch (cmd) {
+    case 'clear':
+      $('#text')[0].innerHTML="";
+      return "";
+    case 'exit':
+      return "'exit' is not provided since window.close() is not working for security reasons.";
+    default:
+      return `${cmd}: Not yet implemented`;
+  }
 }
